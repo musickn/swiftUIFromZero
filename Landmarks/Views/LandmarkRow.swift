@@ -4,17 +4,27 @@
 //
 //  Created by Panasarn Kanchanapiboon on 23/9/2566 BE.
 //
-
 import SwiftUI
 
-struct LandmarkView: View {
+
+struct LandmarkRow: View {
     var landmark: Landmark
-    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            landmark.image
+                .resizable()
+                .frame(width: 50, height: 50)
+            Text(landmark.name)
+            
+            Spacer()
+        }
     }
 }
 
-#Preview {
-    LandmarkView()
+
+struct LandmarkRow_Previews: PreviewProvider {
+    static var previews: some View {
+        LandmarkRow(landmark: landmarks[0])
+    }
 }
